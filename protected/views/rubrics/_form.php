@@ -26,14 +26,34 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'desc'); ?>
+		<?php echo $form->labelEx($model,'descr'); ?>
         <?php
         $this->widget('ext.editMe.widgets.ExtEditMe', array(
             'model' => $model,
-            'attribute' => 'desc'
+            'attribute' => 'descr'
         ));
         ?>
-		<?php echo $form->error($model,'desc'); ?>
+		<?php echo $form->error($model,'descr'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'time'); ?>
+		<?php echo $form->textArea($model,'time',array('rows'=>1, 'cols'=>20)); ?>
+		<?php echo $form->error($model,'time'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'day'); ?>
+		<?php echo $form->dropDownList($model,'day',array(
+            'Monday'=>'Понедельник',
+            'Tuesday'=>'Вторник',
+            'Wednesday'=>'Среда',
+            'Thursday'=>'Четверг',
+            'Friday'=>'Пятница',
+            'Saturday'=>'Суббота',
+            'Sunday'=>'Воскресенье'
+        )); ?>
+		<?php echo $form->error($model,'day'); ?>
 	</div>
 
 	<div class="row buttons">

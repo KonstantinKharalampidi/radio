@@ -22,8 +22,18 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'desc'); ?>
-		<?php echo $form->textArea($model,'desc',array('rows'=>6, 'cols'=>50)); ?>
+		<?php echo $form->label($model,'descr'); ?>
+		<?php echo $form->textArea($model,'descr',array('rows'=>6, 'cols'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'time'); ?>
+		<?php echo $form->textArea($model,'time',array('rows'=>6, 'cols'=>50)); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'day'); ?>
+		<?php echo $form->textArea($model,'day',array('rows'=>6, 'cols'=>50)); ?>
 	</div>
 
 	<div class="row buttons">

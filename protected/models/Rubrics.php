@@ -6,7 +6,9 @@
  * The followings are the available columns in table 'rubrics':
  * @property integer $id
  * @property string $name
- * @property string $desc
+ * @property string $descr
+ * @property string $time
+ * @property string $day
  */
 class Rubrics extends CActiveRecord
 {
@@ -26,10 +28,10 @@ class Rubrics extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, desc', 'required'),
+			array('name, descr, time, day', 'required'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, desc', 'safe', 'on'=>'search'),
+			array('id, name, descr, time, day', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,7 +54,9 @@ class Rubrics extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Name',
-			'desc' => 'Desc',
+			'descr' => 'Descr',
+			'time' => 'Time',
+			'day' => 'Day',
 		);
 	}
 
@@ -76,7 +80,9 @@ class Rubrics extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('desc',$this->desc,true);
+		$criteria->compare('descr',$this->descr,true);
+		$criteria->compare('time',$this->time,true);
+		$criteria->compare('day',$this->day,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
