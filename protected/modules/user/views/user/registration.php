@@ -3,8 +3,9 @@ $this->breadcrumbs=array(
 	UserModule::t("Registration"),
 );
 ?>
-
-<h1><?php echo UserModule::t("Registration"); ?></h1>
+<div class="row-fluid">
+    <div class="span10 offset1">
+        <h1><?php echo UserModule::t("Registration"); ?></h1>
 
 <?php if(Yii::app()->user->hasFlash('registration')): ?>
 <div class="success">
@@ -28,13 +29,13 @@ $this->breadcrumbs=array(
 	<?php echo $form->errorSummary(array($model,$profile)); ?>
 	
 	<div class="row">
-	<?php echo $form->labelEx($model,'username'); ?>
+	<?php echo $form->labelEx($model,'username'); ?><br />
 	<?php echo $form->textField($model,'username'); ?>
 	<?php echo $form->error($model,'username'); ?>
 	</div>
 	
 	<div class="row">
-	<?php echo $form->labelEx($model,'password'); ?>
+	<?php echo $form->labelEx($model,'password'); ?><br />
 	<?php echo $form->passwordField($model,'password'); ?>
 	<?php echo $form->error($model,'password'); ?>
 	<p class="hint">
@@ -43,13 +44,13 @@ $this->breadcrumbs=array(
 	</div>
 	
 	<div class="row">
-	<?php echo $form->labelEx($model,'verifyPassword'); ?>
+	<?php echo $form->labelEx($model,'verifyPassword'); ?><br />
 	<?php echo $form->passwordField($model,'verifyPassword'); ?>
 	<?php echo $form->error($model,'verifyPassword'); ?>
 	</div>
 	
 	<div class="row">
-	<?php echo $form->labelEx($model,'email'); ?>
+	<?php echo $form->labelEx($model,'email'); ?><br />
 	<?php echo $form->textField($model,'email'); ?>
 	<?php echo $form->error($model,'email'); ?>
 	</div>
@@ -60,7 +61,7 @@ $this->breadcrumbs=array(
 			foreach($profileFields as $field) {
 			?>
 	<div class="row">
-		<?php echo $form->labelEx($profile,$field->varname); ?>
+		<?php echo $form->labelEx($profile,$field->varname); ?><br />
 		<?php 
 		if ($widgetEdit = $field->widgetEdit($profile)) {
 			echo $widgetEdit;
@@ -80,9 +81,9 @@ $this->breadcrumbs=array(
 ?>
 	<?php if (UserModule::doCaptcha('registration')): ?>
 	<div class="row">
-		<?php echo $form->labelEx($model,'verifyCode'); ?>
+		<?php echo $form->labelEx($model,'verifyCode'); ?><br />
 		
-		<?php $this->widget('CCaptcha'); ?>
+		<?php $this->widget('CCaptcha'); ?><br />
 		<?php echo $form->textField($model,'verifyCode'); ?>
 		<?php echo $form->error($model,'verifyCode'); ?>
 		
@@ -98,3 +99,5 @@ $this->breadcrumbs=array(
 <?php $this->endWidget(); ?>
 </div><!-- form -->
 <?php endif; ?>
+    </div>
+</div>

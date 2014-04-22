@@ -21,7 +21,7 @@ $this->menu=array(
 <table class="dataGrid">
 	<tr>
 		<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('username')); ?></th>
-	    <td><?php echo CHtml::encode($model->username); ?></td>
+                <td><b>Ваши данные </b> <br /><?php echo CHtml::encode($model->username); ?></td>
 	</tr>
 	<?php 
 		$profileFields=ProfileField::model()->forOwner()->sort()->findAll();
@@ -39,18 +39,18 @@ $this->menu=array(
 	?>
 	<tr>
 		<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('email')); ?></th>
-    	<td><?php echo CHtml::encode($model->email); ?></td>
+    	<td><b>E-Mail: </b><br /><?php echo CHtml::encode($model->email); ?></td>
 	</tr>
 	<tr>
 		<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('create_at')); ?></th>
-    	<td><?php echo $model->create_at; ?></td>
+    	<td><b>Дата регистрации: </b><br /><?php echo $model->create_at; ?></td>
 	</tr>
 	<tr>
 		<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('lastvisit_at')); ?></th>
-    	<td><?php echo $model->lastvisit_at; ?></td>
+                <td><b>Последнее посещение: </b><br /><?php echo $model->lastvisit_at; ?></td>
 	</tr>
 	<tr>
 		<th class="label"><?php echo CHtml::encode($model->getAttributeLabel('status')); ?></th>
-    	<td><?php echo CHtml::encode(User::itemAlias("UserStatus",$model->status)); ?></td>
+                <td><b>Статус: </b><br /><?php echo CHtml::encode(User::itemAlias("UserStatus",$model->status)); ?></td>
 	</tr>
 </table>

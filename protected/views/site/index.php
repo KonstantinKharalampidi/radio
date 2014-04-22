@@ -68,12 +68,12 @@ $this->pageTitle=Yii::app()->name;
 </div>
 
 
-<div class="row-fluid navbar-fixed-bottom" style="margin-bottom: 80px">
+<div class="row-fluid">
     <div class="span3 offset9">
         <h3>Социальные сети:</h3>
-        <img src="img/1365786151_vkontakte.png" />
-        <img src="img/1365786160_twitter.png" />
-        <img src="img/1365786140_facebook.png" />
+        <a href="https://vk.com/radio.onpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786151_vkontakte.png" /></a>
+        <a href="https://twitter.com/radioonpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786160_twitter.png" /></a>
+        <a href="https://www.facebook.com/onpuradio" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786140_facebook.png" /></a>
 
 
     </div>
