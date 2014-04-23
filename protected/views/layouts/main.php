@@ -35,12 +35,12 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only">Свернуть</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php"><img src="img/12779.png" width="80px" /> </a>
+            <a class="navbar-brand" href="<?php  echo Yii::app()->request->baseUrl; ?>"><img src="img/12779.png" width="80px" /> </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -49,17 +49,23 @@
                 <?php $this->widget('zii.widgets.CMenu',array(
                     'htmlOptions'=>array('class'=>'nav navbar-nav'),
                     'items'=>array(
-                        array('label'=>'Главная', 'url'=>array('/site/index')),
+                        array('label'=>'Главная', 'url'=>Yii::app()->request->baseUrl),
                         array('label'=>'Расписание записи', 'url'=>array('/scheduler'), 'visible'=>Yii::app()->user->checkAccess('Team')),
                         array('label'=>'Управление рубриками', 'url'=>array('/rubrics'), 'visible'=>Yii::app()->user->checkAccess('Team')),
-                        array('url'=>Yii::app()->getModule('user')->loginUrl, 'label'=>Yii::app()->getModule('user')->t("Login"), 'visible'=>Yii::app()->user->isGuest),
-                        array('url'=>Yii::app()->getModule('user')->registrationUrl, 'label'=>Yii::app()->getModule('user')->t("Register"), 'visible'=>Yii::app()->user->isGuest),
-                        array('url'=>Yii::app()->getModule('user')->profileUrl, 'label'=>Yii::app()->getModule('user')->t("Profile"), 'visible'=>!Yii::app()->user->isGuest),
-                        array('url'=>Yii::app()->getModule('user')->logoutUrl, 'label'=>Yii::app()->getModule('user')->t("Logout").' ('.Yii::app()->user->name.')', 'visible'=>!Yii::app()->user->isGuest),
-
-                    ),
+                                    ),
                 )); ?>
-            
+
+
+            <?php $this->widget('zii.widgets.CMenu',array(
+                'htmlOptions'=>array('class'=>'nav navbar-nav navbar-right'),
+                'items'=>array(
+                    array('url'=>Yii::app()->getModule('user')->loginUrl, 'label'=>Yii::app()->getModule('user')->t("Login"), 'visible'=>Yii::app()->user->isGuest),
+                    array('url'=>Yii::app()->getModule('user')->registrationUrl, 'label'=>Yii::app()->getModule('user')->t("Register"), 'visible'=>Yii::app()->user->isGuest),
+                    array('url'=>Yii::app()->getModule('user')->profileUrl, 'label'=>Yii::app()->getModule('user')->t("Profile"), 'visible'=>!Yii::app()->user->isGuest),
+                    array('url'=>Yii::app()->getModule('user')->logoutUrl, 'label'=>Yii::app()->getModule('user')->t("Logout").' ('.Yii::app()->user->name.')', 'visible'=>!Yii::app()->user->isGuest),
+
+                ),
+            )); ?>
 
 <!--            <ul class="nav navbar-nav navbar-right">-->
 <!--                <li><a href="#">Nickname</a></li>-->
