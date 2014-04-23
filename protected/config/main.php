@@ -44,6 +44,10 @@ return array(
 
 	// application components
 	'components'=>array(
+        'clientScript'=>array(
+            'scriptMap'=>array(
+                'jquery.js'=>'js/vendor/jquery-1.11.0.min.js',
+            )),
         'user'=>array(
             'class'=>'RWebUser',
             'allowAutoLogin'=>true,
@@ -96,7 +100,7 @@ return array(
 		),
 	),
 
-	// application-level parameters that can be accessed
+        // application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page

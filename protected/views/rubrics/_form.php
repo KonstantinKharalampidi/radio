@@ -25,16 +25,17 @@
 		<?php echo $form->error($model,'name'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'descr'); ?>
-        <?php
-        $this->widget('ext.editMe.widgets.ExtEditMe', array(
-            'model' => $model,
-            'attribute' => 'descr'
-        ));
-        ?>
-		<?php echo $form->error($model,'descr'); ?>
-	</div>
+    <div class="row">
+        <?php echo $form->labelEx($model,'descr'); ?>
+        <?php $this->widget('application.extensions.tinymce.ETinyMce',
+            array(
+                'model'=>$model,
+                'attribute'=>'descr',
+                'editorTemplate'=>'full',
+                'htmlOptions'=>array('rows'=>6, 'cols'=>50, 'class'=>'tinymce'),
+            )); ?>
+        <?php echo $form->error($model,'descr'); ?>
+    </div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'time'); ?>

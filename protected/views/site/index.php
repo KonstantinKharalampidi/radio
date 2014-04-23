@@ -4,10 +4,9 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<div class="container-fluid">
-    <div class="row-fluid" style="margin-top: 20px">
-        <div class="span9">
-            <div class="row-fluid">
+<div class="container">
+    <div class="row" style="margin-top: 20px">
+        <div class="col-xs12">
                 <div id="radio-slider-lol">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                         <!--<!-- Маркеры слайдов -->
@@ -20,19 +19,16 @@ $this->pageTitle=Yii::app()->name;
                         <!-- Содержимое слайдов -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <a href="http://twitter.com" target="_blank" title="Описание"><img id="radio-slider" src="https://pp.vk.me/c7001/c540100/v540100591/f35c/rmvUOWij-h4.jpg" alt="Описание"></a>
+                                <a href="http://radio.opu.ua" target="_top" title="Радио ОНПУ"><img id="radio-slider" src="https://pp.vk.me/c606522/v606522626/76fc/-NeCBgPlA-4.jpg"></a>
 
                             </div>
 
-                            <div class="item">
-                                <a href="http://vk.com" target="_blank" title="Описание"><img id="radio-slider" src="https://pp.vk.me/c7001/c540100/v540100591/f363/kRTGGWxeLxM.jpg" alt="Описание"></a>
+                            <?php
+                            foreach(Slider::model()->findAll() as $showSlide){
+                                echo "<div class='item'><a href='$showSlide->url' target='_blank' title='$showSlide->descr'><img id='radio-slider' src='$showSlide->img'></a></div>";
 
-                            </div>
-
-                            <div class="item">
-                                <a href="http://facebook.com" target="_blank" title="Описание"><img id="radio-slider" src="https://pp.vk.me/c7001/c540100/v540100591/f36a/QIV5BaLHZvg.jpg" alt="Описание"></a>
-
-                            </div>
+                            }
+                            ?>
                         </div>
 
                         <!-- Controls -->
@@ -44,39 +40,80 @@ $this->pageTitle=Yii::app()->name;
                         </a>
                     </div>
                 </div>
-            </div>
+
+    </div>
+     </div>
+    <div class="row">
+        <div class="col-xs-6">
+            <div id="text-content">
+            <div id="block">
+            <div id="inside-block">
+                <h1>Передачи:</h1> <br />
+                <!-- Split button -->
+                <!-- Button trigger modal -->
+
+                <?php
+                foreach(Rubrics::model()->findAll() as $show){
+                    echo "<a href='#' data-toggle='modal' data-target='#$show->id'>$show->name</a> <hr /> ";
+                    echo " <div class='modal fade' id='$show->id' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>
+                <div class='modal-dialog'>
+                    <div class='modal-content'>
+                        <div class='modal-header'>
+                            <button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+                            <h4 class='modal-title' id='myModalLabel'>$show->name</h4>
+                        </div>
+                        <div class='modal-body'>
+                                $show->descr
+                        </div>
+                        <div class='modal-footer'>
+                            <button type='button' class='btn btn-primary' data-dismiss='modal'>Закрыть</button>
+                        </div>
+                    </div>
+                </div>
+            </div>";
+                }
+                ?>
 
 
+                </div></div></div>
         </div>
-        <div class="span3">
+        <div class="col-xs-4 col-xs-offset-2">
 
-            <div class="btn-group btn-group-vertical">
+            <div style="margin-top: 20px" class="btn-group btn-group-vertical">
                 <!--start play-->
-                <div class="alert alert-success">
-                    <p id="play" data-container="body" data-placement="bottom" data-content='<p id="play"></p>' data-html="true">
-                        Идёт загрузка данных, это займёт всего несколько секунд
-                    </p>
 
-                    <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
-                    <script type="text/javascript" src="http://s2.whsh4u.com/mrp.js"></script>
-                    <script type="text/javascript">
-                        MRP.insert({
-                            'url':'http://radio.opu.ua:8000/radioonpu',
-                            'lang':'ru',
-                            'codec':'mp3',
-                            'volume':100,
-                            'autoplay':false,
-                            'buffering':5,
-                            'title':'Radio ONPU',
-                            'welcome':'Добро пожаловать!',
-                            'wmode':'transparent',
-                            'skin':'faredirfare',
-                            'width':269,
-                            'height':52
-                        });
-                    </script>
-                    <!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+                <div id="block">
+                   <div id="inside-block">
 
+                        <p id="play" data-container="body" data-placement="bottom" data-content='<p id="play"></p>' data-html="true">
+
+                        </p>
+
+                        <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+                        <script type="text/javascript" src="http://s2.whsh4u.com/mrp.js"></script>
+                        <script type="text/javascript">
+                            MRP.insert({
+                                'url':'http://radio.opu.ua:8000/radioonpu',
+                                'lang':'ru',
+                                'codec':'mp3',
+                                'volume':100,
+                                'autoplay':false,
+                                'buffering':5,
+                                'title':'Radio ONPU',
+                                'welcome':'Добро пожаловать!',
+                                'wmode':'transparent',
+                                'skin':'faredirfare',
+                                'width':269,
+                                'height':52
+                            });
+                        </script>
+                        <!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+                        <div style="text-align: center"
+                            <a href="https://vk.com/radio.onpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786151_vkontakte.png" /></a>
+                            <a href="https://twitter.com/radioonpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786160_twitter.png" /></a>
+                            <a href="https://www.facebook.com/onpuradio" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786140_facebook.png" /></a>
+                        </div>
+                    </div>
                 </div>
 
                 <script>
@@ -96,16 +133,9 @@ $this->pageTitle=Yii::app()->name;
                         setInterval('show()',10000);
                     });
                 </script>
-
-                <!--end play-->
             </div>
-            <h3>Социальные сети:</h3>
-            <a href="https://vk.com/radio.onpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786151_vkontakte.png" /></a>
-            <a href="https://twitter.com/radioonpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786160_twitter.png" /></a>
-            <a href="https://www.facebook.com/onpuradio" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786140_facebook.png" /></a>
-
-
+                <!--end play-->
         </div>
-
     </div>
+
 </div>
