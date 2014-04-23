@@ -14,9 +14,22 @@ body {
 }
 
 
-
-
-
+#radio-slider{
+    width: 890px;
+    height: 150px;
+}
+#radio-slider-lol{
+    width: 910px;
+    height: 170px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.84);
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 0 7px black;
+}
 
 
 

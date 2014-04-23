@@ -6,13 +6,49 @@ $this->pageTitle=Yii::app()->name;
 
 <div class="container-fluid">
     <div class="row-fluid" style="margin-top: 20px">
-        <div class="span5">
-            <a class="twitter-timeline" href="https://twitter.com/radioonpu" data-widget-id="369722372003078144">Твиты пользователя @radioonpu</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <div class="span9">
+            <div class="row-fluid">
+                <div id="radio-slider-lol">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!--<!-- Маркеры слайдов -->
+                        <!--<ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>-->
+
+                        <!-- Содержимое слайдов -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <a href="http://twitter.com" target="_blank" title="Описание"><img id="radio-slider" src="https://pp.vk.me/c7001/c540100/v540100591/f35c/rmvUOWij-h4.jpg" alt="Описание"></a>
+
+                            </div>
+
+                            <div class="item">
+                                <a href="http://vk.com" target="_blank" title="Описание"><img id="radio-slider" src="https://pp.vk.me/c7001/c540100/v540100591/f363/kRTGGWxeLxM.jpg" alt="Описание"></a>
+
+                            </div>
+
+                            <div class="item">
+                                <a href="http://facebook.com" target="_blank" title="Описание"><img id="radio-slider" src="https://pp.vk.me/c7001/c540100/v540100591/f36a/QIV5BaLHZvg.jpg" alt="Описание"></a>
+
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
-        <div class="span3 offset4">
+        <div class="span3">
 
             <div class="btn-group btn-group-vertical">
                 <!--start play-->
@@ -63,17 +99,13 @@ $this->pageTitle=Yii::app()->name;
 
                 <!--end play-->
             </div>
+            <h3>Социальные сети:</h3>
+            <a href="https://vk.com/radio.onpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786151_vkontakte.png" /></a>
+            <a href="https://twitter.com/radioonpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786160_twitter.png" /></a>
+            <a href="https://www.facebook.com/onpuradio" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786140_facebook.png" /></a>
+
+
         </div>
+
     </div>
 </div>
-
-
-<div class="row-fluid">
-    <div class="span3 offset9">
-        <h3>Социальные сети:</h3>
-        <a href="https://vk.com/radio.onpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786151_vkontakte.png" /></a>
-        <a href="https://twitter.com/radioonpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786160_twitter.png" /></a>
-        <a href="https://www.facebook.com/onpuradio" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786140_facebook.png" /></a>
-
-
-    </div>
