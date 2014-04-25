@@ -12,22 +12,33 @@ body {
 
 
 }
-
-
-#radio-slider{
-    width: 750px;
-    height: 150px;
+#rubrics{
+    width: 800px;
+    margin-left: 75px;
 }
-#radio-slider-lol{
-    width: 770px;
+
+#social{
+    margin-top: 20px;
+    width: 310px;
     height: 170px;
+}
+
+#play-radio{
+
+    height: 170px;
+    width: 310px;
+}
+
+#radio-slider-lol{
+    margin-left: 75px;
+    height: 170px;
+    width: 770px;
     padding: 10px;
     background: #285A66;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
     display: block;
-    margin: 0 auto;
     box-shadow: 0 0 7px black;
 }
 

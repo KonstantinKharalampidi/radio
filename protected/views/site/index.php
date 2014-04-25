@@ -4,9 +4,62 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<div class="container">
     <div class="row" style="margin-top: 20px">
-        <div class="col-xs12">
+        <div id="play-radio" class="col-xs-5">
+            <div class="btn-group btn-group-vertical">
+                <!--start play-->
+
+                <div id="block">
+                    <div id="inside-block">
+
+                        <p id="play" data-container="body" data-placement="bottom" data-content='<p id="play"></p>' data-html="true">
+
+                        </p>
+
+                        <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+                        <script type="text/javascript" src="http://s2.whsh4u.com/mrp.js"></script>
+                        <script type="text/javascript">
+                            MRP.insert({
+                                'url':'http://radio.opu.ua:8000/radioonpu',
+                                'lang':'ru',
+                                'codec':'mp3',
+                                'volume':100,
+                                'autoplay':false,
+                                'buffering':5,
+                                'title':'Radio ONPU',
+                                'welcome':'Добро пожаловать!',
+                                'wmode':'transparent',
+                                'skin':'faredirfare',
+                                'width':269,
+                                'height':52
+                            });
+                        </script>
+                        <!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
+
+                </div>
+            </div>
+
+            <script>
+                function show()
+                {
+                    $.ajax({
+                        url: 'playing.php',
+                        cache: false,
+                        success: function(html){
+                            $('#play').html(html);
+                        }
+                    });
+                }
+
+                $(document).ready(function(){
+                    show();
+                    setInterval('show()',10000);
+                });
+            </script>
+        </div>
+        <!--end play-->
+        </div>
+        <div class="col-xs-7">
                 <div id="radio-slider-lol">
                     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                         <!--<!-- Маркеры слайдов -->
@@ -19,7 +72,7 @@ $this->pageTitle=Yii::app()->name;
                         <!-- Содержимое слайдов -->
                         <div class="carousel-inner">
                             <div class="item active">
-                                <a href="http://radio.opu.ua" target="_top" title="Радио ОНПУ"><img id="radio-slider" src="https://pp.vk.me/c606522/v606522626/76fc/-NeCBgPlA-4.jpg"></a>
+                                <a href="http://radio.opu.ua" target="_top" title="Радио ОНПУ"><img id="radio-slider" src="slider/radio.jpg"></a>
 
                             </div>
 
@@ -44,7 +97,19 @@ $this->pageTitle=Yii::app()->name;
     </div>
      </div>
     <div class="row">
-        <div class="col-xs-6">
+        <div id="social" class="col-xs-5">
+            <div id="block">
+                <div id="inside-block">
+                    <h4>Радио ОНПУ в социальных сетях:</h4>
+                    <div style="text-align: center"
+                    <a href="https://vk.com/radio.onpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786151_vkontakte.png" /></a>
+                    <a href="https://twitter.com/radioonpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786160_twitter.png" /></a>
+                    <a href="https://www.facebook.com/onpuradio" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786140_facebook.png" /></a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div id="rubrics" class="col-xs-7">
             <div id="text-content">
             <div id="block">
             <div id="inside-block">
@@ -77,65 +142,6 @@ $this->pageTitle=Yii::app()->name;
 
                 </div></div></div>
         </div>
-        <div class="col-xs-4 col-xs-offset-2">
 
-            <div style="margin-top: 20px" class="btn-group btn-group-vertical">
-                <!--start play-->
-
-                <div id="block">
-                   <div id="inside-block">
-
-                        <p id="play" data-container="body" data-placement="bottom" data-content='<p id="play"></p>' data-html="true">
-
-                        </p>
-
-                        <!-- BEGINS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
-                        <script type="text/javascript" src="http://s2.whsh4u.com/mrp.js"></script>
-                        <script type="text/javascript">
-                            MRP.insert({
-                                'url':'http://radio.opu.ua:8000/radioonpu',
-                                'lang':'ru',
-                                'codec':'mp3',
-                                'volume':100,
-                                'autoplay':false,
-                                'buffering':5,
-                                'title':'Radio ONPU',
-                                'welcome':'Добро пожаловать!',
-                                'wmode':'transparent',
-                                'skin':'faredirfare',
-                                'width':269,
-                                'height':52
-                            });
-                        </script>
-                        <!-- ENDS: AUTO-GENERATED MUSES RADIO PLAYER CODE -->
-                        <div style="text-align: center"
-                            <a href="https://vk.com/radio.onpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786151_vkontakte.png" /></a>
-                            <a href="https://twitter.com/radioonpu" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786160_twitter.png" /></a>
-                            <a href="https://www.facebook.com/onpuradio" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/img/1365786140_facebook.png" /></a>
-                        </div>
-                    </div>
-                </div>
-
-                <script>
-                    function show()
-                    {
-                        $.ajax({
-                            url: 'playing.php',
-                            cache: false,
-                            success: function(html){
-                                $('#play').html(html);
-                            }
-                        });
-                    }
-
-                    $(document).ready(function(){
-                        show();
-                        setInterval('show()',10000);
-                    });
-                </script>
-            </div>
-                <!--end play-->
-        </div>
     </div>
 
-</div>
